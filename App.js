@@ -1,19 +1,21 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {StyleSheet, Text, View, Button} from 'react-native';
 
 export default function App() {
+  const [name, setName] = useState('Nanda');
+  const [teacher, setTeacher] = useState({name: 'Lukman', age: 33});
+  const pressHandler = () => {
+    setName('Listiananda Apriliawan');
+    setTeacher({name: 'Dwi Novari', age: 30});
+  };
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <View>
-          <Text style={styles.boldText}>Heelo from react native here!</Text>
-        </View>
-      </View>
-      <View style={styles.body}>
-        <Text style={styles.boldText}>Heelo from react native here!</Text>
-        <Text>Heelo from react native here!</Text>
-        <Text>Heelo from react native here!</Text>
-        <Text>Heelo from react native here!</Text>
+      <Text>Hello, my name is {name} </Text>
+      <Text>
+        My teacher is {teacher.name} and his age is {teacher.age}
+      </Text>
+      <View style={styles.buttonContainer}>
+        <Button title="Update State" onPress={pressHandler} />
       </View>
     </View>
   );
@@ -26,16 +28,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  header: {
-    backgroundColor: 'pink',
-    padding: 20,
-  },
-  boldText: {
-    fontWeight: 'bold',
-    fontStyle: 'italic',
-  },
-  body: {
-    backgroundColor: 'yellow',
-    padding: 20,
+  buttonContainer: {
+    marginTop: 10,
   },
 });
