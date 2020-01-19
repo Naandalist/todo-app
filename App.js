@@ -1,29 +1,33 @@
 import React, {useState} from 'react';
-import {StyleSheet, Text, View, TextInput} from 'react-native';
+import {StyleSheet, Text, View, ScrollView, FlatList} from 'react-native';
 
 export default function App() {
-  const [name, setName] = useState('Nanda');
-  const [age, setAge] = useState(23);
+  const [people, setPeople] = useState([
+    {name: 'shaun', id: '1'},
+    {name: 'sheep', id: '2'},
+    {name: 'goku', id: '3'},
+    {name: 'luigi', id: '4'},
+    {name: 'buffon', id: '5'},
+    {name: 'nanda', id: '6'},
+    {name: 'peter', id: '7'},
+  ]);
 
   return (
     <View style={styles.container}>
-      <Text>Enter name:</Text>
-      <TextInput
-        multiline
-        style={styles.input}
-        placeholder="e.g. Nanda"
-        onChangeText={val => setName(val)}
+      <FlatList
+        numColumns={2}
+        keyExtractor={item => item.id}
+        data={people}
+        renderItem={({item}) => <Text style={styles.item}>{item.name} </Text>}
       />
-      <Text>Enter age:</Text>
-      <TextInput
-        keyboardType="numeric"
-        style={styles.input}
-        placeholder="e.g. 30"
-        onChangeText={val => setAge(val)}
-      />
-      <Text>
-        Hello, my name is {name}, {age} years old.
-      </Text>
+
+      {/* <ScrollView>
+        {people.map(person => (
+          <View key={person.key}>
+            <Text style={styles.item}>{person.name} </Text>
+          </View>
+        ))}
+      </ScrollView> */}
     </View>
   );
 }
@@ -32,15 +36,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 40,
+    paddingHorizontal: 20,
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
-  input: {
-    borderWidth: 1,
-    borderRadius: 10,
-    borderColor: '#777',
-    padding: 8,
-    margin: 10,
-    width: 200,
+  item: {
+    fontSize: 20,
+    marginTop: 24,
+    padding: 30,
+    backgroundColor: 'pink',
+    marginHorizontal: 10,
   },
 });
