@@ -3,11 +3,9 @@ import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 
 const TodoItem = ({item, pressHandler}) => {
   return (
-    <View>
-      <TouchableOpacity onPress={() => pressHandler(item.key)}>
-        <Text style={styles.item}>{item.text}</Text>
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity onPress={() => pressHandler(item.key)}>
+      <Text style={styles.item}>{item.text}</Text>
+    </TouchableOpacity>
   );
 };
 
