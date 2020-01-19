@@ -10,6 +10,7 @@ import {
 import Header from '../components/Header';
 import TodoItem from '../components/TodoItem';
 import AddTodo from '../components/AddTodo';
+// import Sandbox from '../components/Sandbox';
 
 const Dashboard = () => {
   const [todos, setTodos] = useState([
@@ -30,7 +31,7 @@ const Dashboard = () => {
         return [...prevTodos, {text: text, key: key}];
       });
     } else {
-      Alert.alert('SORRY!', 'Todo mus be over 3 chars long.', [
+      Alert.alert('SORRY!', 'Todo must be over 3 chars long.', [
         {text: 'Understood', onPress: () => console.log('alert closed')},
       ]);
     }
@@ -62,9 +63,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   content: {
+    flex: 1,
     padding: 40,
   },
   list: {
+    flex: 1,
     marginTop: 20,
   },
 });
