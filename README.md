@@ -1,5 +1,7 @@
 # mobile todo app
 
-This is a repo to train myself.
+## This is repo to train myself.
 
-I will use React Native-Hooks by following instructions from Shaun Net Ninja
+I have to be able to use hooks. After feeling enough with class based components.
+
+I use React Native-Hooks by following instructions from Shaun Net Ninja.
