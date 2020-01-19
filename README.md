@@ -2,4 +2,4 @@
 
 This is a repo to train myself.
 
-I'ill use React Native with Hooks
+I will use React Native-Hooks by following instructions from Shaun Net Ninja
