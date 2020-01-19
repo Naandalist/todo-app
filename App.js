@@ -1,11 +1,11 @@
-import React from 'react';
-import {View} from 'react-native';
+import React, {Fragment} from 'react';
 import Dashboard from './src/screens/Dashboard';
 
-export default function App() {
+const App = () => {
   return (
-    <>
+    <Fragment>
       <Dashboard />
-    </>
+    </Fragment>
   );
-}
+};
+export default App;

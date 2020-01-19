@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import {StyleSheet, Text, View, FlatList, TouchableOpacity} from 'react-native';
+import {StyleSheet, View, FlatList} from 'react-native';
 import Header from '../components/Header';
-// import App from '../../App';
 import TodoItem from '../components/TodoItem';
 
 const Dashboard = () => {
@@ -11,19 +10,20 @@ const Dashboard = () => {
     {text: 'coding with javascript', key: '3'},
   ]);
   const pressHandler = key => {
-    console.log('KEY: ', key);
+    // console.log('KEY: ', key);
+    setTodos(prevTodos => {
+      return prevTodos.filter(todo => todo.key != key);
+    });
   };
   return (
     <View style={styles.container}>
-      {/** Header */}
       <Header />
       <View style={styles.content}>
-        {/**to Form */}
         <View style={styles.list}>
           <FlatList
             data={todos}
             renderItem={({item}) => (
-              <TodoItem item={item} press={pressHandler()} />
+              <TodoItem item={item} pressHandler={pressHandler} />
             )}
           />
         </View>

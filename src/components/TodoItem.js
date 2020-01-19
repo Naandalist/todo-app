@@ -1,10 +1,10 @@
 import React from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 
-const TodoItem = ({item}) => {
+const TodoItem = ({item, pressHandler}) => {
   return (
     <View>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => pressHandler(item.key)}>
         <Text style={styles.item}>{item.text}</Text>
       </TouchableOpacity>
     </View>
