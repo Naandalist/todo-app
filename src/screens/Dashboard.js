@@ -1,8 +1,4 @@
 import React, {useState} from 'react';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import Entypo from 'react-native-vector-icons/Entypo';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import {
   StyleSheet,
   View,
@@ -10,12 +6,10 @@ import {
   Alert,
   TouchableWithoutFeedback,
   Keyboard,
-  Text,
 } from 'react-native';
 import Header from '../components/Header';
 import TodoItem from '../components/TodoItem';
 import AddTodo from '../components/AddTodo';
-// import Sandbox from '../components/Sandbox';
 
 const Dashboard = () => {
   const [todos, setTodos] = useState([
@@ -45,10 +39,6 @@ const Dashboard = () => {
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View style={styles.container}>
-        <View>
-          <Text>FontAwesome Icons</Text>
-          <FontAwesome name="trophy" />
-        </View>
         <Header />
         <View style={styles.content}>
           <AddTodo submitHandler={submitHandler} />
@@ -88,4 +78,10 @@ export default Dashboard;
  * If you want to see list of available icons from fontawesome,
  * you can look in this directory:
  * \node_modules\react-native-vector-icons\glyphmaps\FontAwesome.json
+ *
+ * you can import, just like below:
+ * import Ionicons from 'react-native-vector-icons/Ionicons';
+ * import FontAwesome from 'react-native-vector-icons/FontAwesome';
+ * import Entypo from 'react-native-vector-icons/Entypo';
+ * import Icon from 'react-native-vector-icons/FontAwesome';
  */
