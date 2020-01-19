@@ -4,4 +4,4 @@
 
 I need to be able to use hooks. After feeling enough with class based components.
 
-I use React Native-Hooks by following instructions from Shaun Net Ninja.
+I use React Native-Hooks by following guide from Shaun Net Ninja.
