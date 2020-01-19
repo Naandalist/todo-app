@@ -1,6 +1,6 @@
 # mobile todo app
 
-## This is repo to train myself.
+## This is repo made for review back react native to improve myself bettter. :blush:
 
 I have to be able to use hooks. After feeling enough with class based components.
 
